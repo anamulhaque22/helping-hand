@@ -1,0 +1,22 @@
+.hero-area {
+    background-image: url("../../../images/hero-bg.png"), linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 480px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.hero-area .container,
+.hero-area .row {
+    height: 100%;
+}
+
+.hero-area h2 {
+    text-transform: uppercase;
+    font-size: 36px;
+}

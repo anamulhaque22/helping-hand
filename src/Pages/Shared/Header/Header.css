@@ -1,6 +1,13 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
 .header .navbar {
     background-color: var(--header-bg);
-    height: 80px;
+    height: 100px;
     padding-top: 0;
     padding-bottom: 0;
 }
