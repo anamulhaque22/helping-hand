@@ -5,10 +5,6 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 480px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    overflow: hidden;
 }
 
 .hero-area .container,

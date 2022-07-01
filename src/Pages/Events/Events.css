@@ -1,0 +1,24 @@
+/* Single event CSS */
+.single-event {
+    position: relative;
+}
+
+.single-event img {
+    max-width: 100%;
+    height: auto;
+}
+
+.single-event h4 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    background: #FFBD3E;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 600;
+    height: 80px;
+    border-radius: 0px 0px 10px 10px;
+}
