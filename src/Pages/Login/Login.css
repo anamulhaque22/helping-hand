@@ -1,6 +1,55 @@
-.login-area{
+.login-area {
     display: flex;
     height: calc(100vh - 100px);
     justify-content: center;
     align-items: center;
+}
+
+button.login-btn {
+    background: #fff;
+    border: 2px solid #C7C7C7;
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 15px;
+    font-weight: 500;
+}
+
+.login-btn svg {
+    font-size: 25px;
+}
+
+.login-social {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.social-login-area p{
+    text-align: center;
+    font-size: 16px;
+}
+.social-login-area p.or {
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-login-area p.or::before {
+    content: '';
+    position: absolute;
+    width: 46%;
+    height: 1px;
+    background: #C7C7C7;
+    top: 15px;
+    right: 0px;
+}
+
+.social-login-area p.or::after {
+    content: '';
+    position: absolute;
+    width: 46%;
+    height: 1px;
+    background: #C7C7C7;
+    top: 15px;
+    left: 0px;
 }
