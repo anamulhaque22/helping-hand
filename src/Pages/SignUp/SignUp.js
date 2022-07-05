@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PageTitle from '../Shared/PageTitle/PageTitle';
@@ -6,6 +6,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const SignUp = () => {
+    const nameRef = useRef('');
+    const emailRef = useRef('');
     const [validated, setValidated] = useState(false);
     const [password, setPassword] = useState('');
     const [passwordMatch, setPasswordMatch] = useState(true);
@@ -16,11 +18,11 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
     const handleMatch = (conPass) => {
-        if (password === conPass){
+        if (password === conPass) {
             setPasswordMatch(true);
-        }else{
+        } else {
             setPasswordMatch(false);
         }
     }
@@ -32,15 +34,12 @@ const SignUp = () => {
             event.stopPropagation();
         }
         setValidated(true);
-        const name = event.target.text.value;
+        const name = event.target.name.value;
         const email = event.target.email.value;
-        console.log(name, email, password);
-        if (name !== '' && email !== '' && password !== '') {
-            createUserWithEmailAndPassword(email, password);
-            console.log(user);
-        }
+        createUserWithEmailAndPassword(email, password);
+        event.preventDefault();
     };
-    console.log(!passwordMatch, !acceptTrams);
+    // console.log(!passwordMatch, !acceptTrams);
     return (
         <div className='login-area'>
             <PageTitle title={'Login'}></PageTitle>
@@ -55,7 +54,9 @@ const SignUp = () => {
                                     <Form.Control
                                         required
                                         type="text"
+                                        name='name'
                                         placeholder="Full Name"
+                                        ref={nameRef}
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
@@ -65,6 +66,8 @@ const SignUp = () => {
                                         required
                                         type="email"
                                         placeholder="Email"
+                                        ref={emailRef}
+                                        name='email'
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
