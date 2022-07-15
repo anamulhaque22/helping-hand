@@ -9,13 +9,13 @@ import Hero from '../../Home/Hero/Hero';
 import "./Header.css";
 
 const Header = () => {
-    /*  const [user] = useAuthState(auth);
-     const logout = () => {
-         signOut(auth);
-     }; */
+    const [user, loading, error] = useAuthState(auth);
     const location = useLocation();
+    const logout = () => {
+        signOut(auth);
+    };
     return (
-        <div className='header' style={location.pathname !== '/'? {"height":"100px"}: {"height":"auto"}}>
+        <div className='header' style={location.pathname !== '/' ? { "height": "100px" } : { "height": "auto" }}>
             <div className="main-menu">
                 <Navbar collapseOnSelect expand="lg">
                     <Container className='custom-class'>
@@ -28,8 +28,22 @@ const Header = () => {
                                     <li><Link to="/donation">Donation</Link></li>
                                     <li><Link to="/events">Events</Link></li>
                                     <li><Link to="/blog">Blog</Link></li>
-                                    <li><Link to="/singup" className='register btn'>Register</Link></li>
-                                    <li><Link to='/admin' className='admin btn' >Admin</Link></li>
+                                    <li>
+                                        {
+                                            user && <Link onClick={logout} to='#'>{user.displayName}</Link>
+                                        }
+                                    </li>
+                                    <li>
+                                        {
+                                            !user && <Link to="/singup" className='register btn'>Register</Link>
+
+                                        }
+                                    </li>
+                                    <li>
+                                        {
+                                            !user && <Link to='/admin' className='admin btn' >Admin</Link>
+                                        }
+                                    </li>
                                     {/* onClick={logout} */}
                                 </ul>
                             </Nav>

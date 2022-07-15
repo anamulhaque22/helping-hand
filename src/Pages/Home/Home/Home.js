@@ -1,12 +1,11 @@
 import React from 'react';
-import Hero from '../Hero/Hero';
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Events from '../../Events/Events';
 
 const Home = () => {
     return (
         <>
-           <PageTitle title={'Home'}></PageTitle>
+            <PageTitle title={'Home'}></PageTitle>
             <Events></Events>
         </>
     );
