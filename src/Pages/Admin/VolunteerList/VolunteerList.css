@@ -1,0 +1,36 @@
+.volunder-header h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+}
+
+.volunder-data-table {
+    padding: 30px;
+    background-color: #F8FAFC;
+}
+
+.volunder-data-table .table {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.volunder-data-table .table thead{
+    border-bottom: none;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+.volunder-data-table .table>:not(:first-child) {
+    border: none;
+}
+
+.volunder-data-table tbody,
+.volunder-data-table td,
+.volunder-data-table tfoot,
+.volunder-data-table th,
+.volunder-data-table thead,
+.volunder-data-table tr {
+    border-style: none;
+}
